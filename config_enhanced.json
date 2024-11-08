@@ -1,0 +1,65 @@
+{
+    "target_urls": [
+        "https://example.com"
+    ],
+    "source_code_path": "path/to/source_code",
+    "use_case_mapping": {
+        "login_workflow": {
+            "description": "Login workflow for users",
+            "scanned": true
+        },
+        "payment_processing": {
+            "description": "Handles payment data for PCI-DSS compliance",
+            "scanned": true
+        }
+    },
+    "sast_settings": {
+        "scan_for_injections": true,
+        "configuration_checks": true,
+        "hardcoded_credential_check": true,
+        "novel_issue_detection": true
+    },
+    "dast_settings": {
+        "runtime_vulnerability_scan": true,
+        "attack_simulation": [
+            "sql_injection",
+            "xss",
+            "csrf",
+            "xxe",
+            "cors_misconfig"
+        ],
+        "session_management_checks": true,
+        "business_logic_flaw_analysis": true
+    },
+    "compliance_mapping": {
+        "owasp_top_10": true,
+        "cwe_mapping": true,
+        "nist_mapping": true,
+        "pci_dss": true,
+        "gdpr": true,
+        "mitre_attack_extended": true
+    },
+    "alert_thresholds": {
+        "critical": 10,
+        "high": 7,
+        "medium": 5,
+        "low": 2
+    },
+    "baseline_tracking": {
+        "enable_baseline_tracking": true,
+        "report_history_limit": 10
+    },
+    "real_time_monitoring": {
+        "enable_drift_monitoring": true,
+        "alert_integration": [
+            "slack",
+            "email"
+        ],
+        "code_paths_to_monitor": [
+            "path/to/source_code"
+        ],
+        "config_paths_to_monitor": [
+            "path/to/config"
+        ]
+    }
+}
