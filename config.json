@@ -1,0 +1,35 @@
+{
+    "target_urls": [
+        "https://example.com"
+    ],
+    "source_code_path": "path/to/source_code",
+    "sast_settings": {
+        "scan_for_injections": true,
+        "configuration_checks": true,
+        "hardcoded_credential_check": true
+    },
+    "dast_settings": {
+        "runtime_vulnerability_scan": true,
+        "attack_simulation": [
+            "sql_injection",
+            "xss",
+            "csrf"
+        ],
+        "session_management_checks": true
+    },
+    "compliance_mapping": {
+        "owasp_top_10": true,
+        "cwe_mapping": true,
+        "nist_mapping": true
+    },
+    "alert_thresholds": {
+        "critical": 10,
+        "high": 7,
+        "medium": 5,
+        "low": 2
+    },
+    "baseline_tracking": {
+        "enable_baseline_tracking": true,
+        "report_history_limit": 10
+    }
+}
